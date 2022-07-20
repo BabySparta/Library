@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(221, 248, 255);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    height: 10vh;
+    gap: 12px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: "Monaco", 'Courier New', Courier, monospace;
+}
+
+.bookImg {
+    width: 56px;
+    height: 56px;
+    padding-bottom: 8px;
+}
+
+
+
+.content {
+    width: 100vw;
+    height: 85vh;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+    overflow: auto;
+}
+
+.addBookWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.addBook {
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    width: 14rem;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Monaco", 'Courier New', Courier, monospace;
+}
+
+.addBook:hover {
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+}
+
+.books {
+    padding: 16px;
+    height: 74vh;
+    width: 85%;
+    margin: auto;
+    display: grid;
+    overflow: auto;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: 400px;
+    grid-auto-rows: 400px;
+}
+
+.books div {
+    background-color: blanchedalmond;
+}
+
+
+
+
+
+
+.footer {
+    width: auto;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+.credit {
+    font-family: 'Monaco', 'Courier New', Courier, monospace;
+    font-size: 1.4rem;
+    font-weight: 900;
+}
