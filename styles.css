@@ -67,6 +67,7 @@ body {
   display: none;
   position: fixed; 
   z-index: 1;  
+  padding-top: 200px;
   left: 0;
   top: 0;
   width: 100vw;
@@ -77,12 +78,12 @@ body {
 .modalContent {
     background-color: whitesmoke;
     border-radius: 3%;
-    margin: 30% auto;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: start;
     flex-direction: column;
-    width: 35%;
+    width: 400px;
     height: 60%;
 }
 
@@ -101,6 +102,13 @@ body {
     font-size: 2rem;
     font-weight: 700;
     font-family: 'Monaco', 'Courier New', Courier, monospace;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.close:hover {
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
 }
 
 .modalForm {
@@ -134,35 +142,145 @@ body {
     font-size: 1rem;
     padding: 4px;
     width: 25ch;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.wrapperCheck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
 
 .modalCheck {
-    outline: none;
-    border: 1px solid rgb(183, 241, 255);
-    border-radius: 8px;
-    background-color: rgb(255, 255, 255);
-    font-size: 1rem;
-    padding: 4px;
+    width: 1.5rem;
+    height: 1.5rem;
+    outline: none;    
 }
 
+#submit {
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: rgb(202, 202, 202);
+    color: whitesmoke;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: "Monaco", 'Courier New', Courier, monospace;
+    transition: 0.2s ease-in-out;
+}
+
+#submit:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: 0.2s ease-in-out;
+    background-color: rgb(190, 190, 190);
+}
 
 .books {
     padding: 16px;
     height: 74vh;
-    width: 85%;
+    width: 70%;
     margin: auto;
     display: grid;
     overflow: auto;
-    gap: 16px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: 400px;
-    grid-auto-rows: 400px;
+    gap: 48px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
 }
 
-.books div {
-    background-color: blanchedalmond;
+.books>div {
+    background-color: rgb(194, 194, 194);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 400px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);;
 }
 
+.cardTitle {
+    font-weight: bold;
+    font-size: 2.5rem;
+    font-family: "Monaco", 'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255);
+}
+
+.cardText {
+    font-size: 2rem;
+    font-family: "Monaco", 'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255);
+}
+
+.cardRead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+/*Read or not Switch*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
 
 
 .footer {
