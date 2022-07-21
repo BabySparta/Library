@@ -199,7 +199,7 @@ body {
     justify-content: space-around;
     align-items: center;
     height: 400px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);;
 }
 
 .cardTitle {
@@ -282,6 +282,25 @@ body {
     border-radius: 50%;
   }
 
+
+.remove {
+    width: 60%;
+    height: 48px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: rgb(255, 130, 130);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-family: 'Monaco', 'Courier New', Courier, monospace;
+    transition: 0.2s ease-in-out;
+}
+
+.remove:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: 0.2s ease-in-out;
+}
 
 .footer {
     width: auto;

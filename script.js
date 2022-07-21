@@ -58,20 +58,34 @@ function makeBook(item) {
     const label = document.createElement('label');
     const input = document.createElement('input');
     const span = document.createElement('span');
+    const remove = document.createElement('button');
 
     input.setAttribute("type", "checkbox");
     label.classList.add('switch');
     span.classList.add('slider');
     span.classList.add('round');
+    remove.classList.add('remove');
 
-
+    remove.textContent = "Remove Book";
     disTitle.textContent = item.title;
     disAuthor.textContent = "By: " + item.author;
     disPages.textContent = "Pages: " + item.pages;
     disReadTxt.textContent = "Have read? ";
     if (item.read === true) {
         input.checked = true;
+        bookCard.style.backgroundColor = 'lightblue';
     }
+    input.addEventListener("change", () => {
+    if (bookCard.style.backgroundColor === 'lightblue') {
+        bookCard.style.backgroundColor = 'rgb(194, 194, 194)';
+    } else {
+        bookCard.style.backgroundColor = 'lightblue';
+    }});
+
+    remove.addEventListener('click', () => {
+        bookCard.parentElement.removeChild(bookCard);
+    })
+
 
     disTitle.classList.add("cardTitle");
     disAuthor.classList.add("cardText");
@@ -86,11 +100,10 @@ function makeBook(item) {
     bookCard.appendChild(disRead);
     disRead.appendChild(disReadTxt);
     disRead.appendChild(label);
-    label.appendChild(input);
-    label.appendChild(span);
+        label.appendChild(input);
+        label.appendChild(span);
+    bookCard.appendChild(remove);
 };
-
-
 
 function displayBook() {
     const lastBook = library.at(-1);
