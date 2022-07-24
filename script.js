@@ -20,6 +20,7 @@ window.onclick = function(event) {
 
 
 form.onsubmit = function() {
+    event.preventDefault();
     const bookTitle = document.querySelector('#title').value;
     const bookAuthor = document.querySelector('#author').value;
     const bookPages = document.querySelector('#pages').value;
@@ -34,11 +35,13 @@ const books = document.querySelector(".books");
 
 let library = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 function addBook(title, author, pages, read) {
