@@ -112,3 +112,25 @@ function displayBook() {
     const lastBook = library.at(-1);
     makeBook(lastBook);
 };
+
+
+/* Validation */
+
+const titleInput = document.getElementById('title');
+const authorInput = document.getElementById('author');
+const pagesInput = document.getElementById('pages');
+
+pagesInput.addEventListener('input', (event) => {
+    if (pagesInput.validity.rangeOverflow) {
+        pagesInput.setCustomValidity("Too many pages. Please input a value between 1 and 5000");
+        pagesInput.reportValidity();
+      } else {
+        pagesInput.setCustomValidity("");
+      }
+    if (pagesInput.validity.rangeUnderflow) {
+      pagesInput.setCustomValidity("Too little pages. Please input a value between 1 and 5000");
+      pagesInput.reportValidity();
+    } else {
+      pagesInput.setCustomValidity("");
+    }
+});
